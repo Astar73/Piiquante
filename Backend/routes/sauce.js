@@ -8,10 +8,10 @@ const auth = require('../middleware/auth');
 // Importation du middleware de gestion des fichiers
 const multer = require('../middleware/multer-config');
 
-// Importation des contrôleurs
+// Importation des contrôleurs de sauce
 const sauceCtrl = require('../controllers/sauce');
 
-// Ajoute les contrôleurs aux routes
+// Création des routes avec leurs middlewares
 router.get('/', auth, sauceCtrl.getAllSauce);
 router.post('/', auth, multer, sauceCtrl.createSauce);
 router.get('/:id', auth, sauceCtrl.getOneSauce);
