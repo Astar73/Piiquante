@@ -1,4 +1,4 @@
-// Importation du modèle de données
+// Importation du modèle de sauce
 const Sauce = require('../models/Sauce');
 // Importation de file system
 const fileSystem = require('fs');
