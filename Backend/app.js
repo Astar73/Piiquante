@@ -29,7 +29,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Utilisation de body-parser
+// Intégration de body-parser
 app.use(bodyParser.json());
 
 // Middleware des routes sauces
