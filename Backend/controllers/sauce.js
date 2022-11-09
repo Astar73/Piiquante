@@ -34,7 +34,7 @@ exports.getOneSauce = (req, res, next) => {
 // Contrôleur de la route GET pour toutes les sauces
 exports.getAllSauce = (req, res, next) => {
     Sauce.find()
-        .then((sauces) => { res.status(200).json(sauces))
+        .then((sauces) => res.status(200).json(sauces))
         .catch((error) => res.status(400).json({ error: error }))
 };
 
