@@ -12,10 +12,10 @@ __Instruction :__
 __Frontend :__  
   
 1. Suivez les instruction du *README.md* dans le dossier *Frontend*  
-2. Exécuter  la commande suivante
+2. Exécutez  la commande suivante
 > npm run start  
 
 __Backend :__  
   
-1. Exécuter la commande suivante
+1. Exécutez la commande suivante
 > nodemon server
