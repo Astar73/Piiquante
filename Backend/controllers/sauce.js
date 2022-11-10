@@ -1,7 +1,8 @@
 // Importation du modèle de sauce
-const Sauce = require('../models/Sauce');
+const Sauce = require('../models/sauce');
 // Importation de file system
-const fileSystem = require('fs');
+const fs = require('fs');
+const { json } = require('express');
 
 // Contrôleur de la route POST
 exports.createSauce = (req, res, next) => {
@@ -20,7 +21,7 @@ exports.createSauce = (req, res, next) => {
     });
     // Enregistre la sauce dans la base de données
     sauce.save()
-        .then(() => res.status(201).json({ message: 'Sauce enregistré !' }))
+        .then(() => res.status(201).json({ message: 'Sauce enregistrée !' }))
         .catch((error) => res.status(400).json({ error: error }))
 };
   
@@ -49,7 +50,7 @@ exports.modifySauce = (req, res, next) => {
     } : { ...req.body };
     // Mise à jour de la sauce dans la base de données
     Sauce.updateOne({ _id: req.params.id}, { ...sauceObject, _id: req.params.id})
-        .then(() => res.status(200).json({ message : 'Sauce modifié!'}))
+        .then(() => res.status(200).json({ message : 'Sauce modifiée !'}))
         .catch(error => res.status(401).json({ error }))         
 };
 
@@ -60,12 +61,17 @@ exports.deleteSauce = (req, res, next) => {
             // Nom du fichier image à supprimer
             const filename = sauce.imageUrl.split('/images/')[1];
             // Suppression du fichier image
-            fileSystem.unlink(`images/${filename}`, () => {
+            fs.unlink(`images/${filename}`, () => {
                 // Suppression de la sauce de la base de données
                 Sauce.deleteOne({_id: req.params.id})
-                    .then(() => res.status(200).json({ message: 'Sauce supprimé !'}))
+                    .then(() => res.status(200).json({ message: 'Sauce supprimée !'}))
                     .catch(error => res.status(401).json({ error }))
             });            
         })
         .catch( error => res.status(500).json({ error }))
  };
+
+ // Contrôleur des likes / dislikes
+exports.likeSauce = (req, res, next) => {
+    const userId = req.bod
+}
