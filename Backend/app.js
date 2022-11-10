@@ -12,7 +12,7 @@ const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
 // Connexion à la base de données mongoDB
-mongoose.connect('mongodb+srv://Axel:test123@piiquante.16s0t42.mongodb.net/DataBase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://openclassroom:openclassroom123@piiquante.16s0t42.mongodb.net/DataBase?retryWrites=true&w=majority',
     { useNewUrlParser: true,
         useUnifiedTopology: true })
     .then(() => console.log('Connexion à MongoDB réussie !'))
