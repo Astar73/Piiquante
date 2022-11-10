@@ -32,11 +32,11 @@ app.use((req, res, next) => {
 // Intégration de body-parser
 app.use(bodyParser.json());
 
+// Middleware de téléchargement de fichiers
+app.use('/images', express.static(path.join(__dirname, 'images')));
 // Middleware des routes sauces
 app.use('/api/sauces', sauceRoutes);
 // Middleware des routes utilisateurs
 app.use('/api/auth', userRoutes);
-// Middleware de téléchargement de fichiers
-app.use('/images', express.static(path.join(__dirname, 'images')));
 
 module.exports = app;
