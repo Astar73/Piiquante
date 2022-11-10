@@ -19,3 +19,7 @@ __Backend :__
   
 1. Exécutez la commande suivante
 > nodemon server
+
+__Navigateur :__  
+1. Ce rendre à l'adresse suviante  
+[localhost:3000](http://localhost:3000)
