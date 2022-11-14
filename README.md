@@ -16,8 +16,10 @@ __Frontend :__
 > npm run start  
 
 __Backend :__  
-  
-1. Exécutez la commande suivante
+
+1. Créer un fichier .env contenant la variable d'environnement suivante :  
+MONGODB_CONNECT='lien_vers_mongodb'  
+2. Exécutez la commande suivante
 > nodemon server
 
 __Navigateur :__  

@@ -1,4 +1,4 @@
-// Improtation de JsonWebToken
+// Importation de JsonWebToken
 const jwt = require('jsonwebtoken');
 
 // Middleware d'authentification de l'utilisateur
