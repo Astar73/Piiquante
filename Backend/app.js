@@ -4,6 +4,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // Importation de mongoDB
 const mongoose = require('mongoose');
+// Importation de dotenv
+const dotenv = require("dotenv");
+dotenv.config();
 // Chemin d'accès à un fichier téléchargé par un utilisateur
 const path = require('path');
 // Importation des routes CRUD
@@ -12,7 +15,7 @@ const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
 // Connexion à la base de données mongoDB
-mongoose.connect('mongodb+srv://openclassroom:openclassroom123@piiquante.16s0t42.mongodb.net/DataBase?retryWrites=true&w=majority',
+mongoose.connect(process.env.MONGODB_CONNECT,
     { useNewUrlParser: true,
         useUnifiedTopology: true })
     .then(() => console.log('Connexion à MongoDB réussie !'))
